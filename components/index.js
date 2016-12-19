@@ -12,7 +12,6 @@ class Main extends React.Component {
       if(err) {
         return console.warn('Not able to get JSON');
       }
-      console.warn(json.dataset.data);
       const data = json.dataset.data;
       const quarters = data.map((year) => {
         return year[0];
@@ -22,6 +21,12 @@ class Main extends React.Component {
       });
       const chart = c3.generate({
         bindto: '#chart',
+        padding: {
+          top: 50
+        },
+        color: {
+          pattern: ['#009688']
+        },
         data: {
           x: 'x',
           columns: [
@@ -34,13 +39,13 @@ class Main extends React.Component {
           x: {
             type: 'timeseries',
             tick: {
-              fit: true,
-              format: '%b %y'
+              fit: false,
+              format: '%m-%Y'
             }
           },
           y: {
             label: {
-              text: 'Gross Domestic Product, Austria'
+              text: 'Austria GDP, USD Billions'
             },
             tick: {
               format: d3.format('$')

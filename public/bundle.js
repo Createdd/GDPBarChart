@@ -111,7 +111,6 @@
 	        if (err) {
 	          return console.warn('Not able to get JSON');
 	        }
-	        console.warn(json.dataset.data);
 	        var data = json.dataset.data;
 	        var quarters = data.map(function (year) {
 	          return year[0];
@@ -121,6 +120,12 @@
 	        });
 	        var chart = c3.generate({
 	          bindto: '#chart',
+	          padding: {
+	            top: 50
+	          },
+	          color: {
+	            pattern: ['#009688']
+	          },
 	          data: {
 	            x: 'x',
 	            columns: [['x'].concat(quarters), ['Gross Domestic Product, Austria'].concat(GDPs)],
@@ -130,13 +135,13 @@
 	            x: {
 	              type: 'timeseries',
 	              tick: {
-	                fit: true,
-	                format: '%b %y'
+	                fit: false,
+	                format: '%m-%Y'
 	              }
 	            },
 	            y: {
 	              label: {
-	                text: 'Gross Domestic Product, Austria'
+	                text: 'Austria GDP, USD Billions'
 	              },
 	              tick: {
 	                format: d3.format('$')
