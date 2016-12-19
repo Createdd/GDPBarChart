@@ -93,12 +93,55 @@
 	  }
 
 	  (0, _createClass3.default)(Main, [{
+	    key: 'componentsDidMount',
+	    value: function componentsDidMount() {
+	      var url = 'https://www.quandl.com/api/v1/datasets/ODA/AUT_NGDPD.json?column=1';
+	      d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json', function (err, json) {
+	        if (err) {
+	          return console.error('Not able to get JSON');
+	        }
+	        console.log(json.data);
+	        var data = json.data;
+	        var quarters = dataset.map(function (year) {
+	          return year[0];
+	        });
+	        var GDPs = dataset.map(function (year) {
+	          return year[1];
+	        });
+	        var chart = c3.generate({
+	          bindto: '#chart',
+	          data: {
+	            x: 'x',
+	            columns: [['x'].concat(quarters), ['Gross Domestic Product, Austria'].concat(GDPs)],
+	            type: 'bar'
+	          },
+	          axis: {
+	            x: {
+	              type: 'timeseries',
+	              tick: {
+	                fit: true,
+	                format: '%b %y'
+	              }
+	            },
+	            y: {
+	              label: {
+	                text: 'Gross Domestic Product, Austria'
+	              },
+	              tick: {
+	                format: d3.format('$')
+	              }
+	            }
+	          }
+	        });
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
-	        'everything is working'
+	        _react2.default.createElement('div', { id: 'chart' })
 	      );
 	    }
 	  }]);

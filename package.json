@@ -23,6 +23,8 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
+    "c3": "^0.4.11",
+    "d3": "^4.4.0",
     "express": "^4.13.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
