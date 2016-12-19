@@ -21382,7 +21382,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container grey-text center' },
+	        { className: 'container teal-text center' },
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -21448,7 +21448,7 @@
 	        null,
 	        _react2.default.createElement(
 	          "div",
-	          { className: "container grey-text center'" },
+	          { className: "container teal-text center'" },
 	          _react2.default.createElement(
 	            "div",
 	            { className: "col s6" },

@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div>
-        <div className="container grey-text center'">
+        <div className="container teal-text center'">
           <div className="col s6">
             <h5>A Free Code Camp Challenge</h5>
             <h4>written by <strong>Daniel Deutsch</strong></h4>
