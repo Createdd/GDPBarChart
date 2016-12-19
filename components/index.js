@@ -4,7 +4,7 @@ import Header from './HeaderC.js';
 import Footer from './FooterC.js';
 import * as d3 from "d3";
 import * as c3 from "c3";
-const url = 'https://www.quandl.com/api/v1/datasets/ODA/AUT_NGDPD.json?column=1';
+const url = 'https://www.quandl.com/api/v3/datasets/ODA/AUT_NGDPD.json?api_key=PANWYzB7zFkKzJ73jqjD';
 
 class Main extends React.Component {
   componentDidMount() {
@@ -12,7 +12,8 @@ class Main extends React.Component {
       if(err) {
         return console.warn('Not able to get JSON');
       }
-      const data = json.data;
+      console.warn(json.dataset.data);
+      const data = json.dataset.data;
       const quarters = data.map((year) => {
         return year[0];
       });
@@ -51,8 +52,8 @@ class Main extends React.Component {
   }
   render () {
     return (
-      <div className="container">
-        <div id="chart" />
+      <div className="container valign-wrapper">
+        <div className="container valign" id="chart" />
       </div>
     );
   }

@@ -94,7 +94,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var url = 'https://www.quandl.com/api/v1/datasets/ODA/AUT_NGDPD.json?column=1';
+	var url = 'https://www.quandl.com/api/v3/datasets/ODA/AUT_NGDPD.json?api_key=PANWYzB7zFkKzJ73jqjD';
 
 	var Main = function (_React$Component) {
 	  (0, _inherits3.default)(Main, _React$Component);
@@ -111,7 +111,8 @@
 	        if (err) {
 	          return console.warn('Not able to get JSON');
 	        }
-	        var data = json.data;
+	        console.warn(json.dataset.data);
+	        var data = json.dataset.data;
 	        var quarters = data.map(function (year) {
 	          return year[0];
 	        });
@@ -150,8 +151,8 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
-	        _react2.default.createElement('div', { id: 'chart' })
+	        { className: 'container valign-wrapper' },
+	        _react2.default.createElement('div', { className: 'container valign', id: 'chart' })
 	      );
 	    }
 	  }]);
