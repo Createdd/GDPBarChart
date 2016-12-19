@@ -2,20 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './HeaderC.js';
 import Footer from './FooterC.js';
+import * as d3 from "d3";
+import * as c3 from "c3";
+const url = 'https://www.quandl.com/api/v1/datasets/ODA/AUT_NGDPD.json?column=1';
 
 class Main extends React.Component {
-  componentsDidMount() {
-    const url = 'https://www.quandl.com/api/v1/datasets/ODA/AUT_NGDPD.json?column=1';
-    d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json', (err, json) => {
+  componentDidMount() {
+    d3.json(url, (err, json) => {
       if(err) {
-        return console.error('Not able to get JSON');
+        return console.warn('Not able to get JSON');
       }
-      console.log(json.data);
       const data = json.data;
-      const quarters = dataset.map((year) => {
+      const quarters = data.map((year) => {
         return year[0];
       });
-      const GDPs = dataset.map((year) => {
+      const GDPs = data.map((year) => {
         return year[1];
       });
       const chart = c3.generate({
@@ -47,7 +48,7 @@ class Main extends React.Component {
         }
       })
     })
-  };
+  }
   render () {
     return (
       <div className="container">
