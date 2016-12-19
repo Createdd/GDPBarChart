@@ -27,6 +27,14 @@ class Main extends React.Component {
         color: {
           pattern: ['#009688']
         },
+        grid: {
+          x: {
+              show: true
+          },
+          y: {
+              show: true
+          }
+        },
         data: {
           x: 'x',
           columns: [
@@ -45,7 +53,7 @@ class Main extends React.Component {
           },
           y: {
             label: {
-              text: 'Austria GDP, USD Billions'
+              text: 'Austria GDP at Current Prices, USD Billions'
             },
             tick: {
               format: d3.format('$')

@@ -126,6 +126,14 @@
 	          color: {
 	            pattern: ['#009688']
 	          },
+	          grid: {
+	            x: {
+	              show: true
+	            },
+	            y: {
+	              show: true
+	            }
+	          },
 	          data: {
 	            x: 'x',
 	            columns: [['x'].concat(quarters), ['Gross Domestic Product, Austria'].concat(GDPs)],
@@ -141,7 +149,7 @@
 	            },
 	            y: {
 	              label: {
-	                text: 'Austria GDP, USD Billions'
+	                text: 'Austria GDP at Current Prices, USD Billions'
 	              },
 	              tick: {
 	                format: d3.format('$')
