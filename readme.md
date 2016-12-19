@@ -5,7 +5,7 @@ Created by Daniel Deutsch (<kbd>
 [Github](https://github.com/DDCreationStudios) / [FreeCodeCamp](https://www.freecodecamp.com/ddcreationstudios) / [CodePen](http://codepen.io/ddcreationstudios/) / [LinkedIn](https://www.linkedin.com/in/daniel-deutsch-b95611127) / [Site](http://ddcreationstudios.at//) / [E-Mail](mailto:office@ddcreationstudios.at)
 </kbd>)
 
-## FreeCodeCamp Data Visualization Projects: 
+## FreeCodeCamp Data Visualization Projects:
 # Visualize GDP With  A Bar Chart
 
 ## Watch it on <a href="https://ddcs-gdpbarchart.herokuapp.com/" target="_blank">Heroku</a>:
@@ -13,6 +13,6 @@ Created by Daniel Deutsch (<kbd>
 
 
 ## User stories:
-- I can see US Gross Domestic Product by quarter, over time.
+- I can see the Austrian Gross Domestic Product by year over time.
 
 - I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.
